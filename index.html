@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Afinador Cromático</title>
+
+    <!-- 1. VÍNCULO COM O MANIFEST (PWA) -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1e1e1e">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,25 +16,30 @@
     <div class="tuner-container">
         <h1>Afinador Cromático</h1>
         
-        <!-- Mostrador principal da Nota -->
         <div class="note-display" id="note-display">--</div>
-        
-        <!-- Frequência exata em Hertz -->
         <div class="frequency-display" id="frequency-display">0.0 Hz</div>
 
-        <!-- Barra visual do ponteiro de afinação -->
         <div class="gauge">
             <div class="gauge-center-line"></div>
             <div class="needle" id="needle"></div>
         </div>
 
-        <!-- Indicador de estado (Abaixo / Afinado / Acima) -->
         <div class="status-text" id="status-text">Pressione Iniciar</div>
 
-        <!-- Botão para ligar o microfone -->
         <button id="start-btn">Ligar Microfone 🎤</button>
     </div>
 
     <script src="tuner.js"></script>
+
+    <!-- 2. REGISTO DO SERVICE WORKER (Para funcionar offline) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker registado com sucesso!'))
+                    .catch(err => console.error('Erro ao registar Service Worker:', err));
+            });
+        }
+    </script>
 </body>
 </html>
