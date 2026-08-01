@@ -2,7 +2,7 @@
    SERVICE WORKER: SUPORTE OFFLINE PARA O AFINADOR PWA
    ======================================================= */
 
-const CACHE_NAME = 'afinador-v1';
+const CACHE_NAME = 'afinador-v20260731.1';
 // Lista de arquivos necessários para o app rodar sem internet
 const ARCHIVOS_CACHE = [
     './',

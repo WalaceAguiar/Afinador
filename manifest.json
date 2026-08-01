@@ -1,16 +1,21 @@
 {
   "short_name": "Afinador",
-  "name": "Afinador Cromático de Guitarra",
+  "name": "Afinador Cromático",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "img/music-diapason_98214.png",
+      "sizes": "512x512",
       "type": "image/png",
-      "sizes": "192x192"
-    },
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
     {
-      "src": "icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "img/screenshot.jpg",
+      "sizes": "1220x2712",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Tela de início"
     }
   ],
   "start_url": "./index.html",
